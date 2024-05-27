@@ -14,13 +14,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "gh-pages": "^6.1.1"
-  },
-  "devDependencies": {},
   "bugs": {
     "url": "https://github.com/shelley816/2024_JavaScript/issues"
   },
   "homepage": "https://github.com/shelley816/2024_JavaScript#readme",
-  "description": ""
+  "dependencies": {
+    "gh-pages": "^6.1.1"
+  }
 }
