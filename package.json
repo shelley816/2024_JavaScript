@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d"
+    "deploy": "gh-pages -d class_01"
   },
   "repository": {
     "type": "git",
