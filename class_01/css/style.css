@@ -14,7 +14,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
+menu, nav, output, ruby, h1, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -57,7 +57,13 @@ ul li {
 	float: left;
 }
 
-section {
+h1 {
 	padding-top: 60px;
-	height: 800px;
+	font-size: 30px;
+	line-height: 2em;
+}
+
+p {
+	font-size: 20px;
+	line-height: 1.5em;
 }
