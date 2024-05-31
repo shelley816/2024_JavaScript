@@ -1,2 +1,3 @@
-// alert('Hello World')
-document.getElementById('title1').textContent = '修改後標題1';
+var cookiePrice = 35;
+
+document.getElementById('price').textContent = cookiePrice;
