@@ -1,8 +1,11 @@
-var cookiePrice = 35;
+var hambergur = 55;
+var myMoney = 30;
+var enMoney = hambergur - myMoney;
+var wantList = 7;
+var total = hambergur * wantList;
 
-var greeingText = '嗨';
-var userNameText = '小美';
-var myNameText = '小花';
-
-document.getElementById('userName').textContent = greeingText + ' ' + userNameText;
-document.getElementById('myName').textContent = myNameText;
+document.getElementById('hambergurID').textContent = hambergur;
+document.getElementById('myMoneyID').textContent = myMoney;
+document.getElementById('enMoneyID').textContent = enMoney;
+document.getElementById('wantListID').textContent = wantList;
+document.getElementById('totalID').textContent = total;
