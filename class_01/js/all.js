@@ -1,3 +1,8 @@
 var cookiePrice = 35;
 
-document.getElementById('price').textContent = cookiePrice;
+var greeingText = '嗨';
+var userNameText = '小美';
+var myNameText = '小花';
+
+document.getElementById('userName').textContent = greeingText + ' ' + userNameText;
+document.getElementById('myName').textContent = myNameText;
