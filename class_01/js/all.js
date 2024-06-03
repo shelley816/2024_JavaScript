@@ -1,6 +1,9 @@
+var total;
+
 function count(oneNum, twoNum){
-    var total = oneNum * twoNum;
-    console.log(total);
+    total = oneNum * twoNum;
+    console.log('總共是' + total + '元');
 }
 
-count(80, 45);
+count(12, 5);
+console.log(total);
