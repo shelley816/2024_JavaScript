@@ -1,11 +1,6 @@
-var hambergur = 55;
-var myMoney = 30;
-var enMoney = hambergur - myMoney;
-var wantList = 7;
-var total = hambergur * wantList;
+function greeting(){
+    console.log('Hello');
+    console.log('歡迎光臨本餐廳，請問幾位需要用餐？')
+}
 
-document.getElementById('hambergurID').textContent = hambergur;
-document.getElementById('myMoneyID').textContent = myMoney;
-document.getElementById('enMoneyID').textContent = enMoney;
-document.getElementById('wantListID').textContent = wantList;
-document.getElementById('totalID').textContent = total;
+greeting();
