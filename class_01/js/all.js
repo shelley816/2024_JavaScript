@@ -1,9 +1,8 @@
-var total;
-
-function count(oneNum, twoNum){
-    total = oneNum * twoNum;
-    console.log('總共是' + total + '元');
+document.getElementById('countID').onclick = function(){
+    var hamPrice = 55;
+    var drinkPrice = 35;
+    var hamburgerNum = parseInt(document.getElementById('hamburgerID').value) * hamPrice;
+    var drinkNum = parseInt(document.getElementById('drinkID').value) * drinkPrice;
+    document.getElementById('totalID').textContent = hamburgerNum + drinkNum;
+    console.log(typeof(hamburgerNum + drinkNum));
 }
-
-count(12, 5);
-console.log(total);
