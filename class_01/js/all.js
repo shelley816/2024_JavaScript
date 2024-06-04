@@ -1,3 +1,4 @@
+
 document.getElementById('countID').onclick = function(){
     var hamPrice = 55;
     var drinkPrice = 35;
@@ -6,3 +7,12 @@ document.getElementById('countID').onclick = function(){
     document.getElementById('totalID').textContent = hamburgerNum + drinkNum;
     console.log(typeof(hamburgerNum + drinkNum));
 }
+
+/*
+function getTotalPrice(xNum, yNum){
+    var hamPrice = 55;
+    var drinkPrice = 35;
+    var totalPrice = (hamPrice * xNum) + (drinkPrice * yNum);
+    return total;
+}
+*/
