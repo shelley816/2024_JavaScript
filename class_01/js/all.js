@@ -1,15 +1,15 @@
 
-function getTotalPrice(xNum, yNum){
-    var hamPrice = 55;
-    var drinkPrice = 35;
-    var totalPrice = (hamPrice * xNum) + (drinkPrice * yNum);
-    return totalPrice;
-}
+var oliveGroved = [];
 
-document.getElementById('countID').onclick = function(){
-    var hamburgerNum = parseInt(document.getElementById('hamburgerID').value);
-    var drinkNum = parseInt(document.getElementById('drinkID').value);
+oliveGroved.push(3);
+oliveGroved.push(16);
+oliveGroved.push(4);
+oliveGroved.push(7);
+oliveGroved.push(9);
+oliveGroved.push(2);
+oliveGroved.push(30);
 
-    var clientOrder = getTotalPrice(hamburgerNum, drinkNum);
-    document.getElementById('totalID').textContent = clientOrder;
-}
+oliveGroved[0] = 5;
+
+console.log('我總共有' + oliveGroved.length + '顆橄欖樹');
+console.log(oliveGroved);
