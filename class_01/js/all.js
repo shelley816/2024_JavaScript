@@ -17,7 +17,10 @@ var store = [
         productItem: 66
     }
 ];
+// 撈出產品數大於70的店長
 
 for ( var i = 0; i < store.length; i++ ) {
-    console.log('第 ' + (i+1) + ' 間店長為 ' + store[i].manager);
+    if(store[i].productItem > 70 ) {
+        console.log(store[i].manager + ' 的產品數量有 ' + store[i].productItem + ' 個');
+    }
 }
