@@ -10,7 +10,14 @@ var store = [
         year: 5,
         staffName: ['Bobo', 'Karen', 'Shelly'],
         productItem: 89
+    },{
+        manager: 'Katie',
+        year: 2,
+        staffName: ['Carol', 'Sam', 'Joyce'],
+        productItem: 66
     }
 ];
 
-console.log(store[1].staffName[2]);
+for ( var i = 0; i < store.length; i++ ) {
+    console.log('第 ' + (i+1) + ' 間店長為 ' + store[i].manager);
+}
