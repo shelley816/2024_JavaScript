@@ -17,12 +17,14 @@ var store = [
         productItem: 66
     }
 ];
-// 撈出所有分店的產品數量並加總
+// 找出分店產品大於70即停止迴圈
 
 var storeTotal = store.length;
-var productTotal = 0;
 for ( var i = 0; i < storeTotal; i++ ) {
-    productTotal += store[i].productItem
+    if(store[i].productItem > 70){
+        console.log(store[i].manager + ' 的店產品大於 70');
+        store[i].productItem -= 70;
+        console.log(store[i].manager + ' 剩餘 ' + store[i].productItem + ' 個')
+        break; //只是符合 if 條件就停止
+    };
 }
-
-console.log('所有分店產品數量加總共 ' + productTotal + ' 個');
