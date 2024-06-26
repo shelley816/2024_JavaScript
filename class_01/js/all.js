@@ -1,16 +1,11 @@
 
-// innerHTML
-var el = document.querySelector('#main');
-var str = '<h1 class="titleIDRed">Hi~</h1>';
-el.innerHTML = str+'<h2>Shelley</h2>';
+// createElement
+var str = document.createElement('span');
+str.innerHTML = '1234';
 
-// combine HTML in
-var el2 = document.querySelector('#main2');
-var link = 'https://tw.yahoo.com/';
-var brand = 'yahoo';
-el2.innerHTML = '<li><a href="'+ link +'">'+ brand +'</a></li>';
+document.querySelector('#main2').appendChild(str);
 
-// innerHTML + for
+// createElement + for
 var store = [
     {
         manager: 'John',
@@ -30,11 +25,10 @@ var store = [
     }
 ];
 
-var el3 = document.querySelector('#main3');
+var el2 = document.querySelector('.list');
 var storeLen = store.length;
-var str = '';
 for (let i = 0; i < storeLen; i++) {
-    var content = '<li>'+ store[i].manager +'</li>';
-    str += content;
+    var str = document.createElement('li');
+    str.textContent = store[i].manager;
+    el2.appendChild(str);
 }
-el3.innerHTML = str;
