@@ -1,20 +1,40 @@
 
-// 改變連結
-var el = document.querySelector('.titleClass a');
-el.setAttribute('href','https://www.google.com/');
+// innerHTML
+var el = document.querySelector('#main');
+var str = '<h1 class="titleIDRed">Hi~</h1>';
+el.innerHTML = str+'<h2>Shelley</h2>';
 
-// 增加原本沒有的屬性
-var el2 = document.querySelector('.titleClass');
-el2.setAttribute('id','titleIDRed');
+// combine HTML in
+var el2 = document.querySelector('#main2');
+var link = 'https://tw.yahoo.com/';
+var brand = 'yahoo';
+el2.innerHTML = '<li><a href="'+ link +'">'+ brand +'</a></li>';
 
-// 取出屬性值
-var el3 = document.querySelector('.titleClass a').getAttribute('href');
-console.log(el3);
+// innerHTML + for
+var store = [
+    {
+        manager: 'John',
+        year: 8,
+        staffName: ['Mary', 'Bibi', 'Fifi'],
+        productItem: 76
+    },{
+        manager: 'Lily',
+        year: 5,
+        staffName: ['Bobo', 'Karen', 'Shelly'],
+        productItem: 89
+    },{
+        manager: 'Katie',
+        year: 2,
+        staffName: ['Carol', 'Sam', 'Joyce'],
+        productItem: 66
+    }
+];
 
-// 取出標籤裡的文字內容
-var el4 = document.querySelector('.titleClass a').textContent;
-console.log(el4);
-
-// 取出標籤裡的內容
-var el5 = document.querySelector('.titleClass').innerHTML;
-console.log(el5);
+var el3 = document.querySelector('#main3');
+var storeLen = store.length;
+var str = '';
+for (let i = 0; i < storeLen; i++) {
+    var content = '<li>'+ store[i].manager +'</li>';
+    str += content;
+}
+el3.innerHTML = str;
