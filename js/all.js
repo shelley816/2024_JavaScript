@@ -1,15 +1,34 @@
 
-var oliveGroved = [];
+// createElement
+var str = document.createElement('span');
+str.innerHTML = '1234';
 
-oliveGroved.push(3);
-oliveGroved.push(16);
-oliveGroved.push(4);
-oliveGroved.push(7);
-oliveGroved.push(9);
-oliveGroved.push(2);
-oliveGroved.push(30);
+document.querySelector('#main2').appendChild(str);
 
-oliveGroved[0] = 5;
+// createElement + for
+var store = [
+    {
+        manager: 'John',
+        year: 8,
+        staffName: ['Mary', 'Bibi', 'Fifi'],
+        productItem: 76
+    },{
+        manager: 'Lily',
+        year: 5,
+        staffName: ['Bobo', 'Karen', 'Shelly'],
+        productItem: 89
+    },{
+        manager: 'Katie',
+        year: 2,
+        staffName: ['Carol', 'Sam', 'Joyce'],
+        productItem: 66
+    }
+];
 
-console.log('我總共有' + oliveGroved.length + '顆橄欖樹');
-console.log(oliveGroved);
+var el2 = document.querySelector('.list');
+var storeLen = store.length;
+for (let i = 0; i < storeLen; i++) {
+    var str = document.createElement('li');
+    str.textContent = store[i].manager;
+    el2.appendChild(str);
+}
