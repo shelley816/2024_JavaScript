@@ -1,11 +1,10 @@
+var elBox = document.querySelector('.box');
+elBox.addEventListener('click',function(e){
+    alert('我是Box');
+    e.stopPropagation();
+},false)
 
-var btn = document.querySelector('.btn');
-btn.onclick = function(e){
-    console.log(e);
-};
-
-// 比較新的寫法
-var btn2 = document.querySelector('.btn2');
-btn2.addEventListener('click',function(e){
-    console.log(e);
-}, false);
+var elBody = document.querySelector('.body');
+elBody.addEventListener('click',function(){
+    alert('我是Body');
+},false)

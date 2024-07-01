@@ -66,3 +66,10 @@ p {
 .titleIDRed {
 	color: #f00;
 }
+
+.box {
+	width: 200px;
+	height: 200px;
+	background: #000;
+	margin-bottom: 20px;
+}
