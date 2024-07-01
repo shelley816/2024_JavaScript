@@ -6,6 +6,6 @@ btn.onclick = function(e){
 
 // 比較新的寫法
 var btn2 = document.querySelector('.btn2');
-btn2.addEventListener('click',function(){
-    alert('hello2');
+btn2.addEventListener('click',function(e){
+    console.log(e);
 }, false);
