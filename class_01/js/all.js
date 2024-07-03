@@ -1,29 +1,18 @@
-var area = document.querySelector('#areaId');
-var list = document.querySelector('.list');
-var country = [
-    {
-        farmer: '查理',
-        place: '前鎮區'
-    },
-    {
-        farmer: '卡斯伯',
-        place: '苓雅區'
-    }
-    ,{
-        farmer: '小花',
-        place: '苓雅區'
-    }
-];
+var body = document.body;
 
-var len = country.length;
-function updateList(e){
-    var selectItem = e.target.value;
-    var str = '';
-    for (var i = 0; i < len; i++) {
-        if (selectItem == country[i].place) {
-            str += '<li>' + country[i].farmer + '</li>';
-        }
+
+function goRocket(e){
+    switch(e.keyCode){
+        case 90:
+            document.querySelector('.rocket-1').style.bottom = '2000px';
+            break;
+        case 88:
+            document.querySelector('.rocket-2').style.bottom = '2000px';
+            break;
+        case 67:
+            document.querySelector('.rocket-3').style.bottom = '2000px';
+            break;
     }
-    list.innerHTML = str;
-};
-area.addEventListener('change',updateList,false);
+}
+
+body.addEventListener('keydown',goRocket,false);
