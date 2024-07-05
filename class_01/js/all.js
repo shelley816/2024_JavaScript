@@ -6,6 +6,7 @@ var pageX = document.querySelector('.pageX');
 var pageY = document.querySelector('.pageY');
 var clientX = document.querySelector('.clientX');
 var clientY = document.querySelector('.clientY');
+var mouseImg = document.querySelector('.mouseImg');
 
 el.addEventListener('mousemove',getMouseValue,false)
 
@@ -16,4 +17,6 @@ function getMouseValue(e){
     pageY.textContent = e.pageY;
     clientX.textContent = e.clientX;
     clientY.textContent = e.clientY;
+    mouseImg.style.left = e.clientX + 'px';
+    mouseImg.style.top = e.clientY + 'px';
 }

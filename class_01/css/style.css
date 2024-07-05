@@ -180,4 +180,8 @@ p {
 
 .body {
 	height: 2000px;
+	cursor: none;
+}
+.mouseImg {
+	position: fixed;
 }
