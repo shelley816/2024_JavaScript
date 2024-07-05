@@ -1,8 +1,19 @@
-var el = document.querySelectorAll('.boxS');
-var elLen = el.length;
+var el = document.body;
 
-for (var i = 0; i < elLen; i++) {
-    el[i].addEventListener('mousemove',function(e){
-        alert('碰到我了！')
-    },false);
+var screenX = document.querySelector('.screenX');
+var screenY = document.querySelector('.screenY');
+var pageX = document.querySelector('.pageX');
+var pageY = document.querySelector('.pageY');
+var clientX = document.querySelector('.clientX');
+var clientY = document.querySelector('.clientY');
+
+el.addEventListener('mousemove',getMouseValue,false)
+
+function getMouseValue(e){
+    screenX.textContent = e.screenX;
+    screenY.textContent = e.screenY;
+    pageX.textContent = e.pageX;
+    pageY.textContent = e.pageY;
+    clientX.textContent = e.clientX;
+    clientY.textContent = e.clientY;
 }
