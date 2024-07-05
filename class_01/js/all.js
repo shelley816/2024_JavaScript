@@ -1,11 +1,8 @@
+var el = document.querySelectorAll('.boxS');
+var elLen = el.length;
 
-
-function checkContent(e){
-    var str = e.target.value;
-    if(str==''){
-        alert('請輸入數量');
-    }
+for (var i = 0; i < elLen; i++) {
+    el[i].addEventListener('mousemove',function(e){
+        alert('碰到我了！')
+    },false);
 }
-
-var inputHam = document.querySelector('#hamNumId');
-inputHam.addEventListener('blur',checkContent,false)
