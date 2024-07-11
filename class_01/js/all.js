@@ -1,7 +1,8 @@
-var stories = [
-    {manager:'Mary'},{manager:'Carol'}
-];
-var storiesStr = JSON.stringify(stories); //將 array 轉譯為 string
-localStorage.setItem('managers',storiesStr); //轉成 string 才能放入 localStorage
-var storiesAr = JSON.parse(storiesStr); //再將 string 轉譯為 array
-console.log(storiesAr[1].manager); //轉成 array 才能取出資料
+var list = document.querySelector('.list li');
+function checkData(e){
+    var num = e.target.dataset.num;
+    var cat = e.target.dataset.cat;
+    console.log('編號是：'+num);
+    console.log('養'+cat+'隻貓');
+}
+list.addEventListener('click',checkData,false);
