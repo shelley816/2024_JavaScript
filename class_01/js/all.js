@@ -1,38 +1,24 @@
-var store = [
-    {
-        manager: 'John',
-        year: 8,
-        staffName: ['Mary', 'Bibi', 'Fifi'],
-        productItem: 76
-    },{
-        manager: 'Lily',
-        year: 5,
-        staffName: ['Bobo', 'Karen', 'Shelly'],
-        productItem: 89
-    },{
-        manager: 'Katie',
-        year: 2,
-        staffName: ['Carol', 'Sam', 'Joyce'],
-        productItem: 66
-    }
-];
+var inputCon = [];
+var clickBtn = document.querySelector('.clickBtn');
 
-var list = document.querySelector('.list');
-function updateList(){
-    var storeLen = store.length;
-    var str = '';
-    for (var i = 0; i < storeLen; i++) {
-        str += "<li data-num='"+i+"'>"+store[i].manager+"</li>";
-        list.innerHTML = str;
-    }
-}
-updateList();
-
-function checkList(e){
-    var num = e.target.dataset.num;
-    if(e.target.nodeName !== 'LI'){return};
-    store.splice(num,1);
+function getInputData(){
+    //取得輸入框文字
+    var str = document.querySelector('.inputItem').value;
     updateList();
+    
+    //塞入陣列
+    inputCon.push(str);
+    //將陣列轉成字串
+    var inputConStr = JSON.stringify(inputCon);
+    //將轉成字串的陣列放到localStorage
+    localStorage.setItem('listItem',inputConStr);
+    //將localStorage的字串轉成陣列
+    var inputConaAr = JSON.parse(localStorage.listItem);
+    
+
+    console.log(inputConaAr);
 }
 
-list.addEventListener('click',checkList);
+
+
+clickBtn.addEventListener('click',getInputData,false);
