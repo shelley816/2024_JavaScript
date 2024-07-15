@@ -29,10 +29,10 @@ function updateList(){
 updateList();
 
 function checkList(e){
-    var type = e.target.nodeName;
-    if(type !== 'LI'){return};
     var num = e.target.dataset.num;
-    console.log(store[num].productItem);
+    if(e.target.nodeName !== 'LI'){return};
+    store.splice(num,1);
+    updateList();
 }
 
 list.addEventListener('click',checkList);
