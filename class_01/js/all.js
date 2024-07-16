@@ -25,7 +25,7 @@ function updateList(items){
     str = '';
     var len = items.length;
     for (var i = 0; i < len; i++) {
-        str += '<li><a href="#" data-num="' + i + '"+>刪除</a> <span>' + items[i].content + '</span></li>'
+        str += '<li><a href="#" data-num=' + i + '+>刪除</a> <span>' + items[i].content + '</span></li>'
     }
     list.innerHTML = str;
 }
@@ -35,5 +35,6 @@ function toggleDone(e){
     if(e.target.tagName !== 'A'){return};
     var num = e.target.dataset.num;
     data.splice(num, 1);
+    localStorage.setItem('listData', JSON.stringify(data));
     updateList(data);
 }
