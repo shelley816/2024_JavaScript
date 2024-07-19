@@ -1,18 +1,40 @@
-var body = document.body;
+// 指定 dom
+var list = document.querySelector('.list');
+var sendData = document.querySelector('.send')
+var data = JSON.parse(localStorage.getItem('listData')) || [];
 
+// 監聽與更新
+sendData.addEventListener('click', addData);
+list.addEventListener('click', toggleDone);
+updateList(data);
 
-function goRocket(e){
-    switch(e.keyCode){
-        case 90:
-            document.querySelector('.rocket-1').style.bottom = '2000px';
-            break;
-        case 88:
-            document.querySelector('.rocket-2').style.bottom = '2000px';
-            break;
-        case 67:
-            document.querySelector('.rocket-3').style.bottom = '2000px';
-            break;
-    }
+// 加入列表，並同步更新網頁與 localstorage
+function addData(e){
+    e.preventDefault();
+    var txt = document.querySelector('.inputItem').value;
+    var todo = {
+        content: txt
+    };
+    data.push(todo);
+    updateList(data);
+    localStorage.setItem('listData', JSON.stringify(data));
 }
 
-body.addEventListener('keydown',goRocket,false);
+// 更新網頁內容
+function updateList(items){
+    str = '';
+    var len = items.length;
+    for (var i = 0; i < len; i++) {
+        str += '<li><a href="#" data-num=' + i + '+>刪除</a> <span>' + items[i].content + '</span></li>'
+    }
+    list.innerHTML = str;
+}
+
+function toggleDone(e){
+    e.preventDefault();
+    if(e.target.tagName !== 'A'){return};
+    var num = e.target.dataset.num;
+    data.splice(num, 1);
+    localStorage.setItem('listData', JSON.stringify(data));
+    updateList(data);
+}
