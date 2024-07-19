@@ -1,34 +1,40 @@
+// 指定 dom
+var list = document.querySelector('.list');
+var sendData = document.querySelector('.send')
+var data = JSON.parse(localStorage.getItem('listData')) || [];
 
-// createElement
-var str = document.createElement('span');
-str.innerHTML = '1234';
+// 監聽與更新
+sendData.addEventListener('click', addData);
+list.addEventListener('click', toggleDone);
+updateList(data);
 
-document.querySelector('#main2').appendChild(str);
+// 加入列表，並同步更新網頁與 localstorage
+function addData(e){
+    e.preventDefault();
+    var txt = document.querySelector('.inputItem').value;
+    var todo = {
+        content: txt
+    };
+    data.push(todo);
+    updateList(data);
+    localStorage.setItem('listData', JSON.stringify(data));
+}
 
-// createElement + for
-var store = [
-    {
-        manager: 'John',
-        year: 8,
-        staffName: ['Mary', 'Bibi', 'Fifi'],
-        productItem: 76
-    },{
-        manager: 'Lily',
-        year: 5,
-        staffName: ['Bobo', 'Karen', 'Shelly'],
-        productItem: 89
-    },{
-        manager: 'Katie',
-        year: 2,
-        staffName: ['Carol', 'Sam', 'Joyce'],
-        productItem: 66
+// 更新網頁內容
+function updateList(items){
+    str = '';
+    var len = items.length;
+    for (var i = 0; i < len; i++) {
+        str += '<li><a href="#" data-num=' + i + '+>刪除</a> <span>' + items[i].content + '</span></li>'
     }
-];
+    list.innerHTML = str;
+}
 
-var el2 = document.querySelector('.list');
-var storeLen = store.length;
-for (let i = 0; i < storeLen; i++) {
-    var str = document.createElement('li');
-    str.textContent = store[i].manager;
-    el2.appendChild(str);
+function toggleDone(e){
+    e.preventDefault();
+    if(e.target.tagName !== 'A'){return};
+    var num = e.target.dataset.num;
+    data.splice(num, 1);
+    localStorage.setItem('listData', JSON.stringify(data));
+    updateList(data);
 }
