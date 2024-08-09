@@ -1,40 +1,14 @@
-// 指定 dom
-var list = document.querySelector('.list');
-var sendData = document.querySelector('.send')
-var data = JSON.parse(localStorage.getItem('listData')) || [];
+const xhr = new XMLHttpRequest();
+    // readyState:
+    // 0 - 表示你已經產生一個 XMLHttpRequest，但是還沒有連結你想撈的資料
+    // 1 - 偵測到你有使用 open()，但你還沒有把資料傳送過去
+    // 2 - 偵測到你有用 send
+    // 3 - loading
+    // 4 - 你撈到資料，數據已經接收到了
 
-// 監聽與更新
-sendData.addEventListener('click', addData);
-list.addEventListener('click', toggleDone);
-updateList(data);
+xhr .open('get','https://hexschool.github.io/ajaxHomework/data.json',true);
+        // 格式、讀取網址、同步與非同步
+        // 格式包含 get(讀取資料)、post(傳送資料到伺服器)
 
-// 加入列表，並同步更新網頁與 localstorage
-function addData(e){
-    e.preventDefault();
-    var txt = document.querySelector('.inputItem').value;
-    var todo = {
-        content: txt
-    };
-    data.push(todo);
-    updateList(data);
-    localStorage.setItem('listData', JSON.stringify(data));
-}
-
-// 更新網頁內容
-function updateList(items){
-    str = '';
-    var len = items.length;
-    for (var i = 0; i < len; i++) {
-        str += '<li><a href="#" data-num=' + i + '+>刪除</a> <span>' + items[i].content + '</span></li>'
-    }
-    list.innerHTML = str;
-}
-
-function toggleDone(e){
-    e.preventDefault();
-    if(e.target.tagName !== 'A'){return};
-    var num = e.target.dataset.num;
-    data.splice(num, 1);
-    localStorage.setItem('listData', JSON.stringify(data));
-    updateList(data);
-}
+xhr.send(null);
+        // 空的資料，沒有要傳送資料
