@@ -12,3 +12,17 @@ xhr .open('get','https://hexschool.github.io/ajaxHomework/data.json',true);
 
 xhr.send(null);
         // 空的資料，沒有要傳送資料
+
+// true 為非同步，不會資料傳回來就讓程式繼續跑，等到回傳才會自動回傳
+// false 為同步，它會等資料傳回來，才會讓程式碼繼續跑
+// 如果檔案很大不能卡在這裡，大部分 framework 是使用非同步
+
+xhr.onload = function(){
+    if (xhr.status == 200) {
+        console.log(xhr.responseText);
+        let str = JSON.parse(xhr.responseText);
+        document.querySelector('h3').textContent = str[0].name;
+    } else {
+        console.log('資料沒有回傳')
+    }
+}

@@ -177,11 +177,6 @@ p {
 	padding-left: 10px;
 	padding-right: 20px;
 }
-
-.body {
-	height: 2000px;
-	cursor: none;
-}
 .mouseImg {
 	position: fixed;
 }
