@@ -1,26 +1,26 @@
-var send = document.querySelector('.send');
+const send = document.querySelector('.send');
 
-send.addEventListener('click',signup,false);
+send.addEventListener('click',login,false);
 
-function signup(){
-    var emailStr = document.querySelector('.account').value;
-    var passwordStr = document.querySelector('.password').value;
-    var account = {};
+function login(){
+    const emailStr = document.querySelector('.account').value;
+    const passwordStr = document.querySelector('.password').value;
+    let account = {};
     account.email = emailStr;
     account.password = passwordStr;
-    
-    var xhr = new XMLHttpRequest();
-    xhr.open('post','https://escape-room.hexschool.io/api/user/signup',true);
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('post','https://escape-room.hexschool.io/api/user/signin',true);
     xhr.setRequestHeader('Content-type','application/json');
-    var data = JSON.stringify(account);
+    let data = JSON.stringify(account);
     xhr.send(data);
     xhr.onload = function(){
-        var callbackData = JSON.parse(xhr.responseText);
-        var veriStr = callbackData.message;
-        if(veriStr == '帳號註冊成功'){
-            alert('帳號註冊成功');
+        let callbackData = JSON.parse(xhr.responseText);
+        let infoStr = callbackData.success;
+        if (infoStr == true){
+            alert(callbackData.message);
         }else{
-            alert('帳號註冊失敗');
+            alert(callbackData.message);
         }
     }
 }
