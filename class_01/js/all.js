@@ -10,13 +10,13 @@ function signup(){
     account.password = passwordStr;
     
     var xhr = new XMLHttpRequest();
-    xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);
+    xhr.open('post','https://escape-room.hexschool.io/api/user/signup',true);
     xhr.setRequestHeader('Content-type','application/json');
     var data = JSON.stringify(account);
     xhr.send(data);
     xhr.onload = function(){
         var callbackData = JSON.parse(xhr.responseText);
-        var varStr = callbackData.message;
+        var veriStr = callbackData.message;
         if(veriStr == '帳號註冊成功'){
             alert('帳號註冊成功');
         }else{
